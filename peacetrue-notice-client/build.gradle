@@ -1,0 +1,7 @@
+description '通知公告客户端'
+
+dependencies {
+    api project(":peacetrue-notice-service-api")
+    api 'org.springframework.data:spring-data-commons'
+    api 'com.playtika.reactivefeign:feign-reactor-spring-configuration'
+}

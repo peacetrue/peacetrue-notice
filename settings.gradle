@@ -1,0 +1,6 @@
+rootProject.name = "peacetrue-notice"
+include("peacetrue-notice-service-api")
+include("peacetrue-notice-service-impl")
+include("peacetrue-notice-controller")
+include("peacetrue-notice-app")
+include("peacetrue-notice-client")
