@@ -6,8 +6,6 @@ import lombok.*;
 import javax.validation.constraints.NotNull;
 
 
-
-
 /**
  * @author xiayx
  */

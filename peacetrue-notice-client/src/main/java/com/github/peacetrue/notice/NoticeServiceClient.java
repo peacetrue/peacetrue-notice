@@ -26,19 +26,19 @@ public interface NoticeServiceClient {
     Mono<NoticeVO> add(NoticeAdd params);
 
     @GetMapping(value = "/notices", params = "page")
-    Mono<Page<NoticeVO>> query(@Nullable @SpringQueryMap NoticeQuery params, @Nullable Pageable pageable, @SpringQueryMap String... projection) ;
+    Mono<Page<NoticeVO>> query(@Nullable @SpringQueryMap NoticeQuery params, @Nullable Pageable pageable, @SpringQueryMap String... projection);
 
     @GetMapping(value = "/notices", params = "sort")
-    Flux<NoticeVO> query(@SpringQueryMap NoticeQuery params, Sort sort, @SpringQueryMap String... projection) ;
+    Flux<NoticeVO> query(@SpringQueryMap NoticeQuery params, Sort sort, @SpringQueryMap String... projection);
 
     @GetMapping(value = "/notices")
-    Flux<NoticeVO> query(@SpringQueryMap NoticeQuery params, @SpringQueryMap String... projection) ;
+    Flux<NoticeVO> query(@SpringQueryMap NoticeQuery params, @SpringQueryMap String... projection);
 
     @GetMapping(value = "/notices/get")
-    Mono<NoticeVO> get(@SpringQueryMap NoticeGet params, @SpringQueryMap String... projection) ;
+    Mono<NoticeVO> get(@SpringQueryMap NoticeGet params, @SpringQueryMap String... projection);
 
     @PutMapping(value = "/notices")
-    Mono<Integer> modify(NoticeModify params) ;
+    Mono<Integer> modify(NoticeModify params);
 
     @DeleteMapping(value = "/notices/delete")
     Mono<Integer> delete(@SpringQueryMap NoticeDelete params);

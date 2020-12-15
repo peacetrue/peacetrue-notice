@@ -1,4 +1,4 @@
-export const noticeMessages =  {
+export const noticeMessages = {
     resources: {
         "notices": {
             name: '通知公告',
