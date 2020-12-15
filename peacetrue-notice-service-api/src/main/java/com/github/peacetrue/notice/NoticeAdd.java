@@ -30,8 +30,28 @@ public class NoticeAdd extends OperatorCapableImpl<Long> {
     private String title;
     /** 内容 */
     @NotNull
-    @Size(min = 1, max = 1024)
+    @Size(min = 1, max = 51200)
     private String content;
+    /** 推荐标题 */
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String commendTitle;
+    /** 信息来源 */
+    @NotNull
+    @Size(min = 1, max = 32)
+    private String source;
+    /** 文字 */
+    @NotNull
+    @Size(min = 1, max = 32)
+    private String textWriter;
+    /** 摄影 */
+    @NotNull
+    @Size(min = 1, max = 32)
+    private String photographer;
+    /** 编辑 */
+    @NotNull
+    @Size(min = 1, max = 32)
+    private String editor;
     /** 状态. 1、草稿；2、发布 */
     @In({"1", "2"})
     private Integer stateId;

@@ -45,12 +45,11 @@ public class NoticeServiceImpl implements NoticeService {
     public static Criteria buildCriteria(NoticeQuery params) {
         return CriteriaUtils.and(
                 CriteriaUtils.nullableCriteria(CriteriaUtils.smartIn("id"), params::getId),
-                CriteriaUtils.nullableCriteria(Criteria.where("sourceId")::is, params::getSourceId),
                 CriteriaUtils.nullableCriteria(Criteria.where("title")::like, value -> "%" + value + "%", params::getTitle),
+                CriteriaUtils.nullableCriteria(Criteria.where("source")::is, params::getSource),
                 CriteriaUtils.nullableCriteria(Criteria.where("stateId")::is, params::getStateId),
                 CriteriaUtils.nullableCriteria(Criteria.where("publishedTime")::greaterThanOrEquals, params.getPublishedTime()::getLowerBound),
                 CriteriaUtils.nullableCriteria(Criteria.where("publishedTime")::lessThan, DateUtils.DATE_CELL_EXCLUDE, params.getPublishedTime()::getUpperBound),
-                CriteriaUtils.nullableCriteria(Criteria.where("viewCount")::is, params::getViewCount),
                 CriteriaUtils.nullableCriteria(Criteria.where("creatorId")::is, params::getCreatorId),
                 CriteriaUtils.nullableCriteria(Criteria.where("createdTime")::greaterThanOrEquals, params.getCreatedTime()::getLowerBound),
                 CriteriaUtils.nullableCriteria(Criteria.where("createdTime")::lessThan, DateUtils.DATE_CELL_EXCLUDE, params.getCreatedTime()::getUpperBound),

@@ -2,9 +2,13 @@ DROP TABLE IF EXISTS `notice`;
 CREATE TABLE `notice`
 (
     id             BIGINT AUTO_INCREMENT PRIMARY KEY,
-    source_id      bigint        NOT NULL COMMENT '来源. 书院',
     title          VARCHAR(255)  NOT NULL COMMENT '标题',
     content        VARCHAR(1024) NOT NULL COMMENT '内容',
+    commend_title  VARCHAR(255)  NOT NULL COMMENT '推荐标题',
+    source         VARCHAR(32)   NOT NULL COMMENT '信息来源',
+    text_writer    VARCHAR(32)   NOT NULL COMMENT '文字',
+    photographer   VARCHAR(32)   NOT NULL COMMENT '摄影',
+    editor         VARCHAR(32)   NOT NULL COMMENT '编辑',
     state_id       tinyint       NOT NULL COMMENT '状态. 1、草稿；2、发布',
     published_time datetime      not null comment '发布时间',
     view_count     int           NOT NULL COMMENT '浏览次数',

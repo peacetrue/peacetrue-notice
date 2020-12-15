@@ -24,14 +24,27 @@ public class NoticeModify extends OperatorCapableImpl<Long> implements IdCapable
     /** 主键 */
     @NotNull
     private Long id;
-    /** 来源. 书院 */
-    private Long sourceId;
     /** 标题 */
     @Size(min = 1, max = 255)
     private String title;
     /** 内容 */
     @Size(min = 1, max = 1024)
     private String content;
+    /** 推荐标题 */
+    @Size(min = 1, max = 255)
+    private String commendTitle;
+    /** 信息来源 */
+    @Size(min = 1, max = 32)
+    private String source;
+    /** 文字 */
+    @Size(min = 1, max = 32)
+    private String textWriter;
+    /** 摄影 */
+    @Size(min = 1, max = 32)
+    private String photographer;
+    /** 编辑 */
+    @Size(min = 1, max = 32)
+    private String editor;
     /** 浏览次数 */
     @Min(0)
     private Integer viewCount;

@@ -23,6 +23,16 @@ public class NoticeVO implements Serializable {
     private String title;
     /** 内容 */
     private String content;
+    /** 推荐标题 */
+    private String commendTitle;
+    /** 信息来源 */
+    private String source;
+    /** 文字 */
+    private String textWriter;
+    /** 摄影 */
+    private String photographer;
+    /** 编辑 */
+    private String editor;
     /** 状态. 1、草稿；2、发布 */
     private Integer stateId;
     /** 发布时间 */
