@@ -1,18 +1,18 @@
 import React from 'react';
-import {Create, required, SimpleForm, DateTimeInput, TextInput, NumberInput, minValue, maxLength} from 'react-admin';
-
+import {Create, maxLength, required, SimpleForm, TextInput} from 'react-admin';
+import RichTextInput from 'ra-input-rich-text';
+import {toolbarOptions} from "./utils";
 export const NoticeCreate = (props) => {
     console.info('NoticeCreate:', props);
     return (
         <Create {...props}>
             <SimpleForm>
-                <NumberInput source="sourceId" validate={[required(), minValue(0)]} min={0}/>
-                <TextInput source="title" validate={[required(), maxLength(255)]}/>
-                <TextInput source="content" validate={[required(), maxLength(1024)]}/>
-                <TextInput source="stateId" validate={[required(), maxLength(3)]}/>
-                <DateTimeInput source="publishedTime" showTime validate={[required(),]}/>
-                <NumberInput source="viewCount" validate={[required(), minValue(0)]} min={0}/>
-                <TextInput source="remark" validate={[required(), maxLength(255)]}/>
+                <TextInput source="title" validate={[required(), maxLength(255)]} fullWidth multiline/>
+                <RichTextInput source="content"
+                               toolbar={toolbarOptions}
+                               validate={[required(), maxLength(2048)]}
+                />
+                <TextInput source="remark" validate={[maxLength(255)]} fullWidth multiline/>
             </SimpleForm>
         </Create>
     );

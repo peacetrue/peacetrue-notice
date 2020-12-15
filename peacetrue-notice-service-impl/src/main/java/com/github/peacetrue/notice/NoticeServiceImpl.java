@@ -45,7 +45,6 @@ public class NoticeServiceImpl implements NoticeService {
     public static Criteria buildCriteria(NoticeQuery params) {
         return CriteriaUtils.and(
                 CriteriaUtils.nullableCriteria(CriteriaUtils.smartIn("id"), params::getId),
-                CriteriaUtils.nullableCriteria(Criteria.where("sourceId")::is, params::getSourceId),
                 CriteriaUtils.nullableCriteria(Criteria.where("title")::like, value -> "%" + value + "%", params::getTitle),
                 CriteriaUtils.nullableCriteria(Criteria.where("stateId")::is, params::getStateId),
                 CriteriaUtils.nullableCriteria(Criteria.where("publishedTime")::greaterThanOrEquals, params.getPublishedTime()::getLowerBound),

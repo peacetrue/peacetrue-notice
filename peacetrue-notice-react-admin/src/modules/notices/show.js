@@ -1,21 +1,27 @@
 import React from 'react';
-import {DateField, Show, SimpleShowLayout, TextField, NumberField} from 'react-admin';
+import {DateField, ReferenceField, RichTextField, Show, SimpleShowLayout, TextField} from 'react-admin';
+import PublishTimeField from "./PublishTimeField";
 
 export const NoticeShow = (props) => {
     console.info('NoticeShow:', props);
     return (
         <Show {...props}>
             <SimpleShowLayout>
-                <NumberField source="sourceId"/>
                 <TextField source="title"/>
-                <TextField source="content"/>
-                <TextField source="stateId"/>
-                <DateField source="publishedTime" showTime/>
-                <NumberField source="viewCount"/>
+                <RichTextField source="content"/>
+                <ReferenceField source="stateId" reference="enums/noticeState" link={false}>
+                    <TextField source="name"/>
+                </ReferenceField>
+                <PublishTimeField/>
+                <TextField source="viewCount"/>
                 <TextField source="remark"/>
-                <NumberField source="creatorId"/>
+                <ReferenceField reference="users" source="creatorId" link={'show'}>
+                    <TextField source="username"/>
+                </ReferenceField>
                 <DateField source="createdTime" showTime/>
-                <NumberField source="modifierId"/>
+                <ReferenceField reference="users" source="modifierId" link={'show'}>
+                    <TextField source="username"/>
+                </ReferenceField>
                 <DateField source="modifiedTime" showTime/>
             </SimpleShowLayout>
         </Show>

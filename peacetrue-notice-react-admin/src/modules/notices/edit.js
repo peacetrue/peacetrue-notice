@@ -1,18 +1,26 @@
 import React from 'react';
-import {Edit, required, SimpleForm, NumberInput, TextInput, DateTimeInput, minValue, maxLength} from 'react-admin';
+import {DateField, Edit, maxLength, ReferenceField, required, SimpleForm, TextField, TextInput} from 'react-admin';
+import PublishTimeField from "./PublishTimeField";
+import RichTextInput from "ra-input-rich-text";
+import {toolbarOptions} from "./utils";
 
 export const NoticeEdit = (props) => {
     console.info('NoticeEdit:', props);
     return (
-        <Edit {...props}>
+        <Edit {...props} undoable={false}>
             <SimpleForm>
-                <NumberInput source="sourceId" validate={[required(), minValue(0)]} min={0}/>
-                <TextInput source="title" validate={[required(), maxLength(255)]}/>
-                <TextInput source="content" validate={[required(), maxLength(1024)]}/>
-                <TextInput source="stateId" validate={[required(), maxLength(3)]}/>
-                <DateTimeInput source="publishedTime" validate={[required(),]}/>
-                <NumberInput source="viewCount" validate={[required(), minValue(0)]} min={0}/>
-                <TextInput source="remark" validate={[required(), maxLength(255)]}/>
+                <TextInput source="title" validate={[required(), maxLength(255)]} fullWidth multiline/>
+                <RichTextInput source="content" toolbar={toolbarOptions} validate={[required(), maxLength(2048)]}/>
+                <TextInput source="remark" validate={[maxLength(255)]} fullWidth multiline/>
+                <ReferenceField source="stateId" reference="enums/noticeState" link={false}>
+                    <TextField source="name"/>
+                </ReferenceField>
+                <PublishTimeField withLabel={true}/>
+                <TextField source="viewCount"/>
+                <ReferenceField reference="users" source="creatorId" link={'show'}>
+                    <TextField source="username"/>
+                </ReferenceField>
+                <DateField source="createdTime" showTime/>
             </SimpleForm>
         </Edit>
     );

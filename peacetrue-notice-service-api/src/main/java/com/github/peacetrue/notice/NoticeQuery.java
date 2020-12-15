@@ -21,8 +21,6 @@ public class NoticeQuery extends OperatorCapableImpl<Long> {
 
     /** 主键 */
     private Long[] id;
-    /** 来源. 书院 */
-    private Long sourceId;
     /** 标题 */
     private String title;
     /** 内容 */
