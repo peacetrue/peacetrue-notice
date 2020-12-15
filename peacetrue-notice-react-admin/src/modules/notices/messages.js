@@ -6,7 +6,7 @@ export const noticeMessages = {
                 'id': '主键',
                 'sourceId': '来源',
                 'title': '标题',
-                'content': '内容',
+                'content': '详情',
                 'stateId': '状态',
                 'publishedTime': '发布时间',
                 'viewCount': '浏览次数',

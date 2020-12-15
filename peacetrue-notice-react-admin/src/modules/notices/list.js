@@ -4,7 +4,7 @@ import {Datagrid, DateInput, DateField, EditButton, Filter, List, TextField, Tex
 const Filters = (props) => (
     <Filter {...props}>
         <TextInput label={'标题'} source="title" allowEmpty alwaysOn resettable/>
-        <TextInput label={'内容'} source="content" allowEmpty alwaysOn resettable/>
+        <TextInput label={'详情'} source="content" allowEmpty alwaysOn resettable/>
         <DateInput label={'发布时间起始值'} source="publishedTime.lowerBound" allowEmpty alwaysOn/>
         <DateInput label={'发布时间结束值'} source="publishedTime.upperBound" allowEmpty alwaysOn/>
         <TextInput label={'备注'} source="remark" allowEmpty alwaysOn resettable/>
@@ -22,7 +22,7 @@ export const NoticeList = props => {
             <Datagrid rowClick="show">
                 <TextField label={'来源'} source="sourceId"/>
                 <TextField label={'标题'} source="title"/>
-                <TextField label={'内容'} source="content"/>
+                <TextField label={'详情'} source="content"/>
                 <TextField label={'状态'} source="stateId"/>
                 <DateField label={'发布时间'} source="publishedTime" showTime/>
                 <TextField label={'浏览次数'} source="viewCount"/>

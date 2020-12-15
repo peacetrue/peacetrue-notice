@@ -21,10 +21,12 @@ public class NoticeVO implements Serializable {
     private Long id;
     /** 标题 */
     private String title;
-    /** 内容 */
-    private String content;
     /** 推荐标题 */
     private String commendTitle;
+    /** 简介 */
+    private String intro;
+    /** 详情 */
+    private String detail;
     /** 信息来源 */
     private String source;
     /** 文字 */

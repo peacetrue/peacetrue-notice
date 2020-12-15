@@ -21,21 +21,22 @@ public class NoticeAdd extends OperatorCapableImpl<Long> {
 
     private static final long serialVersionUID = 0L;
 
-    /** 来源. 书院 */
-    @NotNull
-    private Long sourceId;
     /** 标题 */
     @NotNull
     @Size(min = 1, max = 255)
     private String title;
-    /** 内容 */
-    @NotNull
-    @Size(min = 1, max = 51200)
-    private String content;
     /** 推荐标题 */
     @NotNull
     @Size(min = 1, max = 255)
     private String commendTitle;
+    /** 简介 */
+    @NotNull
+    @Size(min = 1, max = 255)
+    private String intro;
+    /** 详情 */
+    @NotNull
+    @Size(min = 1, max = 51200)
+    private String detail;
     /** 信息来源 */
     @NotNull
     @Size(min = 1, max = 32)

@@ -27,12 +27,15 @@ public class NoticeModify extends OperatorCapableImpl<Long> implements IdCapable
     /** 标题 */
     @Size(min = 1, max = 255)
     private String title;
-    /** 内容 */
-    @Size(min = 1, max = 1024)
-    private String content;
     /** 推荐标题 */
     @Size(min = 1, max = 255)
     private String commendTitle;
+    /** 简介 */
+    @Size(min = 1, max = 255)
+    private String intro;
+    /** 详情 */
+    @Size(min = 1, max = 1024)
+    private String detail;
     /** 信息来源 */
     @Size(min = 1, max = 32)
     private String source;
