@@ -54,6 +54,8 @@ public class Notice implements Serializable {
     private Integer viewCount;
     /** 备注 */
     private String remark;
+    /** 序号 */
+    private Long serialNumber;
     /** 创建者主键 */
     private Long creatorId;
     /** 创建时间 */

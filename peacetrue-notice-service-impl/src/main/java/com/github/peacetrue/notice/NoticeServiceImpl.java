@@ -67,6 +67,7 @@ public class NoticeServiceImpl implements NoticeService {
         if (params.getViewCount() == null) params.setViewCount(0);
         if (params.getStateId() == null) params.setStateId(NoticeState.draft.getId());
         if (params.getPublishedTime() == null) params.setPublishedTime(LocalDateTime.now());
+        if (params.getSerialNumber() == null) params.setSerialNumber(0L);
         Notice entity = BeanUtils.map(params, Notice.class);
         entity.setCreatorId(params.getOperatorId());
         entity.setCreatedTime(LocalDateTime.now());

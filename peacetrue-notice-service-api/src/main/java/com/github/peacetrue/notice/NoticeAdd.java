@@ -2,9 +2,7 @@ package com.github.peacetrue.notice;
 
 import com.github.peacetrue.core.OperatorCapableImpl;
 import com.github.peacetrue.validation.constraints.in.In;
-import lombok.Getter;
-import lombok.Setter;
-import lombok.ToString;
+import lombok.*;
 
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
@@ -17,6 +15,8 @@ import java.time.LocalDateTime;
 @Getter
 @Setter
 @ToString
+@NoArgsConstructor
+@AllArgsConstructor
 public class NoticeAdd extends OperatorCapableImpl<Long> {
 
     private static final long serialVersionUID = 0L;
@@ -60,6 +60,8 @@ public class NoticeAdd extends OperatorCapableImpl<Long> {
     private LocalDateTime publishedTime;
     /** 浏览次数 */
     private Integer viewCount;
+    /** 序号 */
+    private Long serialNumber;
     /** 备注 */
     @Size(min = 1, max = 255)
     private String remark;
